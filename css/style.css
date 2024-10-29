@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Sans:wght@400;500;700&display=swap");
 
 * {
-    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Fira Sans", sans-serif;
 }
 
 body {
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 header {
@@ -22,6 +24,7 @@ header {
 }
 
 h1 {
+    font-family: "Roboto", sans-serif;
     margin-top: 10rem;
     margin-bottom: 10rem;
     font-size: 7rem;
@@ -34,19 +37,20 @@ aside {
 
 main {
     background-color: #000;
-    padding: 10rem;
+    padding: 14rem;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-row-gap: 6rem;
+    grid-column-gap: 2rem;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 700;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 1rem 0 0.5rem 0;
 }
 
 p {
@@ -64,7 +68,7 @@ p {
     padding: 1rem;
 }
 .big-card .button {
-    margin: 3rem 0.5rem 0.5rem 0.5rem;
+    margin: 3rem 1rem 1rem 1rem;
     padding: 1rem;
 }
 
@@ -75,24 +79,30 @@ p {
     align-self: flex-start;
     border-radius: 5px;
     border: none;
+    margin-top: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
     cursor: pointer;
-    background-color: #f94560;
+    background-color: #f5526b;
+    transform: scale(0.95);
 }
 
 .card {
+    border-radius: 10px;
     color: #fff;
     grid-column: auto / span 2;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: space-between;
+
     /* margin: 1rem; */
 }
 
 .big-card {
+    border-radius: 10px;
     background-color: #fff;
     color: #000;
 
@@ -107,11 +117,61 @@ p {
     width: 100%;
 }
 
-footer {
+.footer-links {
     background-color: #333333;
     color: #fff;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+
+    padding: 3rem 10rem 3rem 10rem;
 }
 
 nav {
+    grid-column: auto / span;
+}
+footer h2 {
+    grid-row: 1 / 2;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    grid-row: auto / span 1;
+    grid-column: auto / span 1;
+}
+.footer-nav-links {
+    display: grid;
+
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+}
+.address-links {
+    display: grid;
+
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+}
+
+.address {
+    grid-column: auto / span 1;
+}
+
+.social-media {
+    grid-column: auto / span 1;
+}
+
+.icons img {
+    margin-right: 1rem;
+}
+
+main .card img {
+    border-radius: 10px;
+}
+
+.big-card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
